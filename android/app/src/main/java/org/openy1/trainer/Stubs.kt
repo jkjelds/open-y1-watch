@@ -1,4 +1,4 @@
-package org.openy1.trainer
+package org.openy1.trainer.ui
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -19,8 +19,10 @@ enum class SessionState {
 }
 
 data class WatchUiState(
-    val connectionState: ConnectionState = ConnectionState.DISCONNECTED,
-    val sessionState: SessionState = SessionState.IDLE
+    val connection: ConnectionState = ConnectionState.DISCONNECTED,
+    val session: SessionState = SessionState.IDLE,
+    val selectedMode: String = "Mode 1",
+    val elapsedSeconds: Int = 0
 )
 
 class WatchViewModel : ViewModel() {
