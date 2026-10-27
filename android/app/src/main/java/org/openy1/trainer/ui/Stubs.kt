@@ -4,25 +4,28 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-sealed class ConnectionState {
-    object Disconnected : ConnectionState()
-    object Connecting : ConnectionState()
-    object Connected : ConnectionState()
-    object Error : ConnectionState()
+enum class ConnectionState {
+    DISCONNECTED,
+    SCANNING,
+    CONNECTING,
+    CONNECTED
 }
 
-sealed class SessionState {
-    object Idle : SessionState()
-    object Running : SessionState()
-    object Paused : SessionState()
+enum class SessionState {
+    IDLE,
+    RUNNING,
+    PAUSED,
+    STOPPING
 }
 
 class WatchViewModel : ViewModel() {
-    val connectionState: StateFlow<ConnectionState> = MutableStateFlow(ConnectionState.Disconnected)
-    val sessionState: StateFlow<SessionState> = MutableStateFlow(SessionState.Idle)
+    val connectionState: StateFlow<ConnectionState> = MutableStateFlow(ConnectionState.DISCONNECTED)
+    val sessionState: StateFlow<SessionState> = MutableStateFlow(SessionState.IDLE)
 
     fun connect() {}
     fun disconnect() {}
-    fun startSession() {}
-    fun pauseSession() {}
+    fun start() {}
+    fun stop() {}
+    fun previousMode() {}
+    fun nextMode() {}
 }
