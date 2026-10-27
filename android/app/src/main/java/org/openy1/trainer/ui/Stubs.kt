@@ -19,8 +19,11 @@ enum class SessionState {
 }
 
 data class WatchUiState(
-    val connectionState: ConnectionState = ConnectionState.DISCONNECTED,
-    val sessionState: SessionState = SessionState.IDLE
+    val connection: ConnectionState = ConnectionState.DISCONNECTED,
+    val session: SessionState = SessionState.IDLE,
+    val selectedMode: String = "Mode 1",
+    val elapsedSeconds: Int = 0,
+    val label: String = ""
 )
 
 class WatchViewModel : ViewModel() {
