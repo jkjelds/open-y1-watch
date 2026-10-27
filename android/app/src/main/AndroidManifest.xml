@@ -2,7 +2,7 @@
 
     <application
         android:label="Open Y1 Watch"
-        android:theme="@style/Theme.Material3.DayNight.NoActionBar">
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         
         <activity
             android:name=".MainActivity"
