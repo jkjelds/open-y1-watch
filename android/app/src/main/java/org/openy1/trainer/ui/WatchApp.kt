@@ -1,4 +1,4 @@
-depackage org.openy1.trainer.ui
+package org.openy1.trainer.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
