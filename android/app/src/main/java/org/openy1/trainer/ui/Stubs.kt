@@ -18,7 +18,13 @@ enum class SessionState {
     STOPPING
 }
 
+data class WatchUiState(
+    val connectionState: ConnectionState = ConnectionState.DISCONNECTED,
+    val sessionState: SessionState = SessionState.IDLE
+)
+
 class WatchViewModel : ViewModel() {
+    val ui: StateFlow<WatchUiState> = MutableStateFlow(WatchUiState())
     val connectionState: StateFlow<ConnectionState> = MutableStateFlow(ConnectionState.DISCONNECTED)
     val sessionState: StateFlow<SessionState> = MutableStateFlow(SessionState.IDLE)
 
