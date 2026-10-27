@@ -1,4 +1,4 @@
-package org.openy1.trainer.ui
+depackage org.openy1.trainer.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -107,7 +107,7 @@ fun WatchApp(viewModel: WatchViewModel) {
                     Spacer(modifier = Modifier.width(8.dp))
 
                     Text(
-                        text = state.selectedMode.label,
+                        text = state.selectedMode,
                         color = Color.Cyan,
                         fontSize = 14.sp,
                         fontWeight = FontWeight.SemiBold
