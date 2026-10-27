@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun WatchApp(viewModel: WatchViewModel) {
-    val state by viewModel.collectAsState()
+    val state by viewModel.ui.collectAsState()
     val scrollState = rememberScrollState()
 
     // Deep dark theme optimized for AMOLED circular watch display
